@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scal">
+        <title>制作网页的代码笔记</title>
+        <style>
+            body {
+                margin: 0;
+                /* vh是视图高度 100是100% */
+                height: 100vh;
+                background-color: #eee;
+            }
+            /* * {
+                给所有元素添加边框，可以看到页面中的盒子布局
+                border: 1px solid black;
+            } */
+            /* flex属性默认横向 */
+            .yinYing {
+                box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
+                rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
+            }
+            .flex {
+                display: flex;
+            }
+            /* 设计一个通用的白色背景 */
+            .baiSe {
+                background-color: white;
+            }
+            /* 占满除侧边栏外所有地方 */
+            .flex1 {
+                flex:1;
+            }
+            .column {
+                flex-direction: column;
+            }
+            /* 边距样式 */
+            .mg8 {
+                margin: 8px;
+            }
+            .mgr8 {
+                margin-right: 8px;
+            }
+            .mgt8 {
+                margin-top: 8px;
+            }
+            .daoHang {
+                padding: 10px 20px;
+                border-bottom: 1px solid rgb(190, 190, 190);
+                font-size: 14px;
+                color: #666;
+            }
+
+        </style>
+        <!-- <link rel="stylesheet" href="css/style.css"> -->
+    </head>
+    <body class="flex">
+        <!-- 侧边栏 -->
+        <div style="width: 200px; z-index: 2;" class="baiSe yinYing">
+            <!-- 头像栏 -->
+            <div style="padding: 10px;
+                        align-items: center;
+                        justify-content: center;
+                        border-bottom: 1px solid #999;
+                        background-color: aqua;"
+                 class="flex">
+                <img src="http://m.qpic.cn/psc?/V50i4UcO2xHHoB0HWaKA1QYGqa0mCCRR/bqQfVz5yrrGYSXMvKr.cqRvSq*lG0EXDMb6r7aQZFlmTE0QWWl5fkl78TYKDoQlqJDVz9XjY6GwW1P7zabxrNodDXBjfi6hNYxdr8ReaoOo!/mnull&bo=gAKAAoACgAIBCS4!&rf=photolist&t=5"
+                     width="40px" height="40px" alt="">
+                <div style="margin-left: 20px;">苏仔</div>
+            </div>
+            <!-- 导航栏 -->
+            <div class="flex1">
+                <div class="daoHang">导航</div>
+                <div class="daoHang">导航</div>
+                <div class="daoHang">导航</div>
+                <div class="daoHang">导航</div>
+                <div class="daoHang">导航</div>
+            </div>
+        </div>
+        <!-- 主区域 -->
+        <div class="flex1 flex column">
+            <!-- 头部栏 -->
+            <div style="height: 60px;
+                        z-index: 1;
+                        justify-content: center;
+                        align-items: center;"
+                 class="baiSe yinYing flex">
+                <div style="margin-left: 10px;">z-index: 1是置顶</div>
+            </div>
+            <!-- 内容区 -->
+            <div style="overflow: auto" class="flex1 flex">
+                <!-- 左区(占比四分之三) -->
+                <div style="flex:3" class="flex column mg8">
+                    <!-- 数据区 -->
+                    <div class="flex">
+                        <!-- 数据块 -->
+                        <div style="height: 100px" class="flex1 baiSe mgr8 yinYing"></div>
+                        <div style="height: 100px" class="flex1 baiSe mgr8 yinYing"></div>
+                        <div style="height: 100px" class="flex1 baiSe mgr8 yinYing"></div>
+                        <div style="height: 100px" class="flex1 baiSe mgr8 yinYing"></div>
+                    </div>
+                    <!-- 列表区 -->
+                    <div class="flex column">
+                        <!-- 列表项 -->
+                        <div class="baiSe mgt8 yinYing">
+                            <div style="padding: 15px;
+                                        justify-content: center;
+                                        align-items: center;
+                                        flex-direction: column;
+                                        background-color: #0ac083;"
+                                 class="flex">
+                                <div> "p"代表paragraph段落 </div>
+                                <div><h1> "h1"代表head1标题1 </h1></div>
+                                <div> &#60p style="这个p标签的样式"&#62 网页有默认的属性 display:block;是应用到一整行的意思 </div>
+                                <div> width翻译:宽度; 作用:设置盒子的宽度，单位px英文pixel像素的意思 </div>
+                                <div> background翻译:背景; 作用:设置标签盒子的背景 </div>
+                                <div> height翻译:高度; 作用:设置盒子的高度 </div>
+                                <div> margin翻译:边距，也叫外边距; 作用:设置盒子和其他盒子之间的距离 </div>
+                                <div> border翻译:边框; 作用:设置盒子边框，默认透明，具体使用自行搜索 </div>
+                                <div> padding翻译:填充，也叫内边距; 作用:设置盒子边框和内容之间的距离 </div>
+                            </div>
+                        </div>
+                        <div class="baiSe mgt8 yinYing ">
+                            <div style="padding: 15px;
+                                        justify-content: center;
+                                        align-items: center;
+                                        flex-direction: column;"
+                                 class="flex">
+                                <div>&#60div&#62翻译是division分开，专门用来形成块盒子的标签</div>
+                                <div>#f1f1f1是灰色 text-align: center是居中</div>
+                                <div>a标签是链接 href后面的为地址</div>
+                            </div>
+                        </div>
+                        <div class="baiSe mgt8 yinYing">
+                            <div style="text-align: center;
+                                        padding: 40px;">
+                            <img src="http://m.qpic.cn/psc?/V50i4UcO2xHHoB0HWaKA1QYGqa0mCCRR/bqQfVz5yrrGYSXMvKr.cqf0E1zVLSOkhkKYGiptc6n3an22K7VpxKef*VebwTLnOlmFRuP3gmTxbTCu2cyZFxzw1k4jARIveYkh*sfn*Suw!/b&bo=QAaSCkAGkgoBByA!&rf=viewer_4"
+                            alt="莉雅美图" width="552px" height="935px">
+                            </div>
+                            <div style="background-color:black;
+                                        height: 5px;
+                                        width: 5px;">
+                                <a href="http://m.qpic.cn/psc?/V50i4UcO2xHHoB0HWaKA1QYGqa0mCCRR/bqQfVz5yrrGYSXMvKr.cqXrCav1.CMeex.Q36n5Pm9v6LQF4oVQ13F*rHzqtajfVAzPRE2w2QPu1a83svFn4mDrcrN3VErqMCM5xKnF5cAo!/mnull&bo=kAGQAQAAAAADByI!&rf=photolist&t=5">.</a>
+                            </div>
+                        </div>
+                        <div style="height: 160px" class="baiSe mgt8 yinYing"></div>
+                        <div style="height: 160px" class="baiSe mgt8 yinYing"></div>
+                        <div style="height: 160px" class="baiSe mgt8 yinYing"></div>
+                        <div style="height: 160px" class="baiSe mgt8 yinYing"></div>
+                    </div>
+                </div>
+                <!-- 右区(占比四分之一) -->
+                <div style="flex:1" class="flex column mgr8 mgt8">
+                    <!-- 提示区 -->
+                    <div style="height: 150px" class="baiSe yinYing"></div>
+                    <!-- 消息区 -->
+                    <div style="height: 300px" class="baiSe mgt8 yinYing"></div>
+                </div>
+            </div>
+        </div>    
+    </body>
+
+
+
+
+</html>
